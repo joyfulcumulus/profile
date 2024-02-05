@@ -1,0 +1,82 @@
+body {
+  background-color: #f1e6e6;
+  font-family: Helvetica, sans-serif ;
+  color: #636363;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+h1 {
+  color: #292929;
+  font-family: "Roboto", sans-serif;
+  font-size: 38px;
+  line-height: 100%;
+}
+
+h2, h3 {
+  color: #7f615f;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+a {
+  color: #ef7c76;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #88001b;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20% 5%;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  margin: 4% 5%;
+  padding: 20px;
+}
+
+.header-card {
+  text-align: center;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
+}
