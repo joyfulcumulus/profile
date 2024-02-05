@@ -1,20 +1,20 @@
 body {
-  background-color: #f1e6e6;
-  font-family: Helvetica, sans-serif ;
-  color: #636363;
+  background-color: #E0CCBE;
+  font-family: "Open Sans", sans-serif;
+  color: #747264;
   font-size: 14px;
   line-height: 150%;
 }
 
 h1 {
-  color: #292929;
+  color: #3C3633;
   font-family: "Roboto", sans-serif;
   font-size: 38px;
   line-height: 100%;
 }
 
 h2, h3 {
-  color: #7f615f;
+  color: #3C3633;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   line-height: 100%;
@@ -30,12 +30,28 @@ a:hover {
   color: #88001b;
 }
 
+.btn-red {
+  color: #ffffff;
+  line-height: 2.5;
+  padding: 5px 20px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #ef7c76;
+  border: none;
+}
+
+.btn-red:hover {
+  background-color: #88001b;
+  transition: 0.3s;
+}
+
 img {
   border-radius: 50%;
 }
 
 .card {
-  background: #ffffff;
+  background: #EEEDEB;
   border-radius: 20% 5%;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   margin: 4% 5%;
