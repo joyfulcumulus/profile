@@ -1,98 +1,84 @@
-body {
-  background-color: #E0CCBE;
-  font-family: "Open Sans", sans-serif;
-  color: #747264;
-  font-size: 14px;
-  line-height: 150%;
+.container {
+  margin: 0 10rem;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: solid 1px rgba(0,0,0,0.1);
+  padding: 1rem 0 0.5rem 0;
+}
+
+.navbar h1 {
+  color: #4D4F54;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  color: #4D4F54;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  list-style-type: none;
+  margin: 0 0.8rem;
+}
+
+.section-about {
+  margin: 3rem 0;
+  display: flex;
+}
+
+.profile-pic-container {
+  max-width: 25%;
+  margin-left: 2rem;
+  filter: drop-shadow(0px 2px 15px rgba(0,0,0,0.3));
+}
+
+.profile-pic-container img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
 
 h1 {
-  color: #3C3633;
-  font-family: "Roboto", sans-serif;
-  font-size: 38px;
-  line-height: 100%;
+  color: #0F1518;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0;
 }
 
-h2, h3 {
-  color: #3C3633;
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  line-height: 100%;
+p {
+  color: #4D4F54;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
 }
 
-a {
-  color: #ef7c76;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-a:hover {
-  color: #88001b;
-}
-
-.btn-red {
-  color: #ffffff;
-  line-height: 2.5;
-  padding: 5px 20px;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 15px;
-  background-color: #ef7c76;
+.primary {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   border: none;
+  margin-right: 0.8rem;
 }
 
-.btn-red:hover {
-  background-color: #88001b;
-  transition: 0.3s;
-}
-
-img {
-  border-radius: 50%;
-}
-
-.card {
-  background: #EEEDEB;
-  border-radius: 20% 5%;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  margin: 4% 5%;
-  padding: 20px;
-}
-
-.header-card {
-  text-align: center;
-}
-
-.container {
-  width: 900px;
-  margin: 0 auto;
-}
-
-.list-inline > li {
-  display: inline-block;
-  padding: 0px 10px;
-}
-
-.list-inline {
-  list-style: none;
-  padding-left: 0px;
-}
-
-@media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
-  .container {
-    width: 700px;
-  }
-}
-
-@media (max-width: 720px) {
-  .container {
-    width: 500px;
-  }
-}
-
-@media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
-  .container {
-    width: 300px;
-  }
+.secondary {
+  background-color: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: solid black 1px;
+  border-radius: 4px;
+  margin-right: 0.8rem;
 }

@@ -3,7 +3,7 @@
   <head>
     <title>YY | Profile Page</title>
     <meta name="description"
-          content="Profile page of YY as part of Le Wagon WD Bootcamp."
+          content="Developer Profile of YY"
           charset="utf-8"
           >
     <meta name="viewport"
@@ -11,58 +11,33 @@
           >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container">
-      <div class="header-card">
-        <h1>Hello, I'm YY</h1>
-        <img  src="./images/Profile Pic.png"
-              alt="Profile picture of YY"
-              width="100px"
-              >
+      <div class="navbar">
+        <h1>YY</h1>
+        <ul>
+          <li>About</li>
+          <li>Projects</li>
+        </ul>
       </div>
-        <div class="card">
-          <h2>Job Title</h2>
-            <p>Programmer 💻</p>
+
+      <div class="section-about">
+        <div>
+          <h1>Hello! I'm YY, a junior web developer</h1>
+          <p>I am a graduate of the Le Wagon Web Development bootcamp, which teaches the fundamentals of front-end and back-end development. My previous role was a product manager at a large Southeast Asia E-commerce company.</p>
+          <p>I made the switch to be a developer to enjoy the thrill of building my own products, as well as to build up my technical skills.</p>
+          <p>If you're looking for an all-rounded developer who can write decent code, independently design good UI/UX and manage a product, hire me!</p>
+          <button class="primary">View LinkedIn</button>
+          <button class="secondary">View Github</button>
         </div>
-        <div class="card">
-          <h2>Description of Myself</h2>
-            <ul>
-              <li>Learning Web Dev full-time at
-                <a href="https://www.lewagon.com" target="_blank">
-                  Le Wagon
-                </a>
-              </li>
-              <li>Previously a product manager</li>
-              <li>Enjoys playing guitar as a hobby</li>
-            </ul>
+        <div class="profile-pic-container">
+          <img src="./images/Profile Pic.png" alt="Profile Pic of YY">
         </div>
-        <div class="card">
-          <h2>Follow Me</h2>
-            <ul class="list-inline">
-              <li>
-                <a href="https://github.com/">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                : Github
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-                : Linkedin
-              </li>
-              <li>
-                <a href="https://www.facebook.com/">
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-                : Facebook
-              </li>
-            </ul>
-          <button type="button" class="btn-red">Email Me</button>
-        </div>
+      </div>
     </div>
   </body>
 </html>
