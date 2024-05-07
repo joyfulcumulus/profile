@@ -1,6 +1,8 @@
 .container {
-  margin: 0 10rem;
+  margin: 0 15%;
 }
+
+/* Navigation Bar */
 
 .navbar {
   display: flex;
@@ -34,8 +36,67 @@
   margin: 0 0.8rem;
 }
 
+.navbar a {
+  text-decoration: none;
+  color: #4D4F54;
+}
+
+/* General Element Styling */
+
+h1 {
+  color: #0F1518;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+h2 {
+  color: #0F1518;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+p {
+  color: #4D4F54;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+a.primary {
+  display: inline-block;
+  background-color: #101720;
+  color: #D6DCE3;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  margin-right: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+
+a.secondary {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #4D4F54;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: solid #DADADA 1px;
+  border-radius: 4px;
+  margin-right: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+
+/* About Section */
+
 .section-about {
-  margin: 3rem 0;
+  margin-top: 3rem;
   display: flex;
 }
 
@@ -50,35 +111,77 @@
   border-radius: 1rem;
 }
 
+/* Projects Section */
 
-h1 {
-  color: #0F1518;
-  font-family: "Poetsen One", sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  margin-top: 0;
+.section-projects {
+  margin-top: 6rem;
 }
 
-p {
+/* Projects Card */
+
+.container-card {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 2rem;
+  border-radius: 1rem;
+  padding: 0rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.one {
+  background-color: #E6EDF1;
+}
+
+.two {
+  background-color: #FEFAF2;
+}
+
+.container-card-text {
+  padding: 1.8rem 0rem;
+}
+
+.container-card-text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.container-card-subtitle-text {
+  font-weight: 600;
+  color: #1973A0;
+}
+
+.container-card-text a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container-card-technologies {
+  margin-bottom: 0.8rem;
+}
+
+.container-card-technologies button {
+  background-color: white;
   color: #4D4F54;
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
+  border-radius: 4px;
+  border: solid 1px #0CCA4A;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
-.primary {
-  background-color: black;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  border: none;
-  margin-right: 0.8rem;
+.container-card-image img {
+  width: 100%;
 }
 
-.secondary {
-  background-color: white;
-  color: black;
-  padding: 0.5rem 1rem;
-  border: solid black 1px;
-  border-radius: 4px;
-  margin-right: 0.8rem;
+@media (max-width: 768px) {
+  .container-card {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .profile-pic-container {
+    display: none;
+  }
+
 }
