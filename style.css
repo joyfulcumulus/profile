@@ -2,6 +2,84 @@
   margin: 0 15%;
 }
 
+.container-iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* General Element Styling */
+
+h1 {
+  color: #0F1518;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+h2 {
+  color: #0F1518;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+h3 {
+  color: #0F1518;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0
+}
+
+p, li {
+  color: #4D4F54;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.primary {
+  display: inline-block;
+  background-color: #101720;
+  color: #D6DCE3;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  margin-right: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+a.secondary {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #4D4F54;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: solid #DADADA 1px;
+  border-radius: 4px;
+  margin-right: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.read-more {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4D4F54;
+}
+
+.read-more i {
+  margin-left: 0.3rem;
+}
+
 /* Navigation Bar */
 
 .navbar {
@@ -51,7 +129,6 @@
 }
 
 .navbar a {
-  text-decoration: none;
   color: #4D4F54;
 }
 
@@ -70,58 +147,6 @@
 
 .dropdown-menu.open {
   height: 48px;
-}
-
-/* General Element Styling */
-
-h1 {
-  color: #0F1518;
-  font-family: "Poetsen One", sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  margin-top: 0;
-}
-
-h2 {
-  color: #0F1518;
-  font-family: "Nunito", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-p {
-  color: #4D4F54;
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-}
-
-a.primary {
-  display: inline-block;
-  background-color: #101720;
-  color: #D6DCE3;
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  border: none;
-  margin-right: 0.8rem;
-  margin-bottom: 0.5rem;
-  text-decoration: none;
-}
-
-a.secondary {
-  display: inline-block;
-  background-color: #ffffff;
-  color: #4D4F54;
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border: solid #DADADA 1px;
-  border-radius: 4px;
-  margin-right: 0.8rem;
-  margin-bottom: 0.5rem;
-  text-decoration: none;
 }
 
 /* About Section */
@@ -181,11 +206,6 @@ a.secondary {
   color: #1973A0;
 }
 
-.container-card-text a {
-  text-decoration: none;
-  font-weight: 600;
-}
-
 .container-card-technologies {
   margin-bottom: 0.8rem;
 }
@@ -205,7 +225,70 @@ a.secondary {
   width: 100%;
 }
 
+/* Testimonial Section */
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial-button {
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.testimonial-button i {
+  font-size: 1.5rem;
+}
+
+.testimonial-view {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial-content {
+  display: flex;
+}
+
+.testimonial-card {
+  background-color: #F1F1F1;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  width: 350px;
+  scroll-snap-align: center;
+}
+
+.testimonial-card i {
+  padding: 0 0.5rem;
+}
+
+.testimonial-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.testimonial-role {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.section-testimonials a {
+  font-weight: 600;
+}
+
+/* Media Queries */
+
 @media (max-width: 768px) {
+
+  .container {
+    margin: 0 5%;
+  }
+
   .container-card {
     display: grid;
     grid-template-columns: 1fr;
@@ -227,4 +310,33 @@ a.secondary {
     display: block;
   }
 
+}
+
+/* Secondary Page Styling (e.g. About Me, Project Details) */
+
+.section-major {
+  margin-top: 3rem;
+}
+
+.sub-section {
+  margin-bottom: 2rem;
+}
+
+.sub-section a {
+  font-weight: 600;
+}
+
+.sub-section ol > li {
+  margin-bottom: 1rem;
+}
+
+
+/* Project Detail Page Styling */
+
+.byline {
+  margin-bottom: 2rem;
+}
+
+.byline p {
+  margin: 0;
 }
