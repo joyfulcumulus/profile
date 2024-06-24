@@ -197,6 +197,14 @@ a.secondary {
   background-color: #FEFAF2;
 }
 
+.three {
+  background-color: #F0FAF3;
+}
+
+.four {
+  background-color: #ffeeef;
+}
+
 .container-card-text {
   padding: 1.8rem 0rem;
 }
