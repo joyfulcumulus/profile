@@ -18,7 +18,7 @@
   <body>
     <div class="container">
       <div class="navbar">
-        <h1><a href="index.html">YY</a></h1>
+        <h1><a href="index.html">Yin Yun</a></h1>
         <ul class="list-menu">
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
@@ -40,26 +40,65 @@
         <div class="byline">
           <p>Role: Team member</p>
           <p>Year: Mar 2024</p>
+          <p>Skills: HTML, CSS, JavaScript, Ruby on Rails, 3rd Party API integration, System Design, Figma</p>
         </div>
 
         <div class="sub-section">
           <h2>About the Project</h2>
-          <p>Content here</p>
+          <p>Sproutify is a plant management app for budding gardening enthusiasts.</p>
+          <p>It contains plant care features:</p>
+          <ol>
+            <li>Plant identification</li>
+            <li>Illness diagnosis</li>
+            <li>Plant tracking (via My Garden)</li>
+            <li>Share watering schedule with buddy</li>
+          </ol>
+          <p>It also contains a plant swap marketplace. Users can chat with each other to understand the plant condition, and make offers to swap plants.</p>
         </div>
 
         <div class="sub-section">
           <h2>My Role</h2>
-          <p>Content here</p>
+          <ul>
+            <li>High fidelity Figma wireframe and prototype design</li>
+            <li>Illness Diagnosis feature (Pair-programming)</li>
+            <li>Marketplace features (Pair-programming)</li>
+          </ul>
         </div>
 
         <div class="sub-section">
-          <h2>Challenges and Learnings</h2>
-          <p>Content here</p>
+          <h2>Problem Solving Highlights</h2>
+          <h3>Integration of 3rd Party API for Plant and Illness Identification</h3>
+          <p>Problem:</p>
+          <ul>
+            <li>To develop the app in 2 weeks, a 3rd party API, <a href="https://web.plant.id/plant-identification-api/" target="_blank">plant.id</a>, was used to diagnose plant illnesses.</li>
+            <li>This API (<a href="https://documenter.getpostman.com/view/24599534/2s93z5A4v2" target="_blank">Documentation</a>) required the submission of a Base64 image in the API request body.</li>
+            <li>This was not intuitive for end users, who would typically submit a photo and expect a result.</li>
+          </ul>
+          <p>Solution: Create a form on frontend to collect image file, convert image file to Base64 in the backend and send to plant.id API.</p>
+          <ol>
+            <li>On the frontend, the input field was styled to look like an "upload" button. When clicked, users could access their device camera or photo gallery to attach an image.</li>
+            <li>Upon receipt of the image file via event listener, convert to Base64 string using the Javascript FileReader interface, readAsDataURL method. Append Base64 string when calling the 3rd party API.</li>
+          </ol>
+
+          <h3>System Design for Marketplace Offers</h3>
+          <p>Problem: We had to design the marketplace for real-world complexities:</p>
+          <ul>
+            <li>Users may want to review various offering options before agreeing to swap.</li>
+            <li>Swap offers can have 3 outcomes: pending, accepted, or rejected.</li>
+            <li>Swap offers to capture historical data accurately, though the plant may change hands.</li>
+          </ul>
+          <p>Solution: We modelled the marketplace offer design after e-commerce applications:</p>
+          <ol>
+            <li>The offers table was a snapshot table. Each record captured the buyer, lister, and the lister plant involved at that point in time.</li>
+            <li>Each offer data had a status indicator ("accepted" field). The buyer plant id was null until an offering option had been selected.</li>
+            <li>An offer could have many offering_options (1:N relationship). We stored the offering_options in a separate table. We avoided storing an array of options inside the offers table as it would be hard to manipulate such a data type if we had to CRUD the offering_options.</li>
+          </ol>
         </div>
 
         <div class="sub-section">
-          <h2>Project Conclusion</h2>
-          <p>Content here</p>
+          <h2>Project Achievement</h2>
+          <p>Sproutify was presented at the Le Wagon Bootcamp Demo Day on 18 March 2024.</p>
+          <p>Our team also reflected on our bootcamp journey here:</p>
         </div>
       </div>
 
