@@ -41,6 +41,7 @@
           <p>Role: Team member</p>
           <p>Year: Apr 2024</p>
           <p>Skills: HTML, CSS, JavaScript, Ruby on Rails (esp. Active Record, Active Job), Chart.js framework, RQRCode ruby gem, Figma</p>
+          <p>Source: <a href="https://github.com/joyfulcumulus/rails-env-app" target="_blank">Github repository</a></p>
         </div>
 
         <div class="sub-section">
@@ -48,6 +49,7 @@
           <p>This project is my personal take on <a href="https://www.build.gov.sg/environment/" target="_blank">Build for Good</a> (BFG) 2024, a yearly citizen hackathon organized by the Singapore Government. For this year, one focus area is "Reducing packaging and food waste, and <strong>encouraging recycling</strong>".</p>
           <p>Singapore's domestic recycling rate has been <a href="https://www.channelnewsasia.com/singapore/big-read-household-recycling-rate-falling-greater-eco-consciousness-waste-goverment-3486066" target="_blank">falling for the past few years</a>, and Singapore's current waste management infrastructure takes time to change. I believe there is an opportunity for residents to improve the situation through <strong>cooperation</strong>.</p>
           <p>To address the focus area in BFG, my solution, Challenge Together, is a community challenge app envisioned to be part of the Singapore government's One Service app. This app is used to administer a Recycling Challenge, where residents cooperate to hit recycling rate targets to collect points that can be converted to vouchers, thus encouraging recycling. How it works:</p>
+          <img src="./images/challenge-1.png" alt="Flow chart of how Challenge Together works">
 
           <p>Consumer-facing features in Challenge Together:</p>
           <ol>
@@ -89,7 +91,9 @@
           <p>Solution: QR code chosen, as it does not require user to fill in information.</p>
           <ol>
             <li>Generate QR code in SVG format using <a href="https://github.com/whomwah/rqrcode" target="_blank">RQRCode Ruby Gem</a> </li>
+            <img src="./images/challenge-2.png" alt="Challenge event page with event QR code">
             <li>Upon scanning the QR code during recycling event, users redirected to a page with all information pre-filled for acknowledgement.</li>
+            <img src="./images/challenge-3.png" alt="Submission of participation and contribution">
           </ol>
           <p><em>Note: For demo purposes, the recyclable weight is mocked using a random number generator.</em></p>
 
@@ -109,7 +113,8 @@
             <li>Update the user's total points in the database</li>
           </ol>
 
-          <p><em>Admin user can run the Rails Active job by pressing a button </em></p>
+          <p>Admin user can run the Rails Active job by pressing a button.</p>
+          <img src="./images/challenge-4.PNG" alt="Metrics Dashboard with Award Points button">
 
           <p>Visualise data using <a href="https://www.chartjs.org/docs/latest/" target="_blank">Chart.js</a>:</p>
           <ol>
