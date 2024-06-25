@@ -96,8 +96,10 @@
           <p>Solution: Create a form on frontend to collect image file, convert image file to Base64 in the backend and send to plant.id API.</p>
           <ol>
             <li>On the frontend, the input field was styled to look like an "upload" button. When clicked, users could access their device camera or photo gallery to attach an image.</li>
+            <img src="./images/sproutify-1.png" alt="Sproutify Diagnosis page">
             <li>Upon receipt of the image file via event listener, convert to Base64 string using the Javascript FileReader interface, readAsDataURL method. Append Base64 string when calling the 3rd party API.</li>
           </ol>
+          <script src="https://gist.github.com/joyfulcumulus/06e3e012470e7931509f3792d1122e70.js"></script>
 
           <h3>System Design for Marketplace Offers</h3>
           <p>Problem: We had to design the marketplace for real-world complexities:</p>
@@ -107,6 +109,7 @@
             <li>Swap offers to capture historical data accurately, though the plant may change hands.</li>
           </ul>
           <p>Solution: We modelled the marketplace offer design after e-commerce applications:</p>
+          <img src="./images/sproutify-2.PNG" alt="offers, offering_options, and plants tables">
           <ol>
             <li>The offers table was a snapshot table. Each record captured the buyer, lister, and the lister plant involved at that point in time.</li>
             <li>Each offer data had a status indicator ("accepted" field). The buyer plant id was null until an offering option had been selected.</li>
