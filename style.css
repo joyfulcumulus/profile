@@ -367,7 +367,9 @@ a.secondary {
 }
 
 .sub-section img {
-  height: 60vmin;
+  max-height: 60vmin;
+  width: 100%;
+  object-fit: contain;
 }
 
 
