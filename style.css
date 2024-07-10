@@ -372,6 +372,15 @@ a.secondary {
   object-fit: contain;
 }
 
+.info-box {
+  background-color: #ffffc1;
+  padding: 0.75rem;
+}
+
+.info-box p {
+  margin: 0;
+}
+
 
 /* Project Detail Page Styling */
 

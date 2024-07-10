@@ -68,11 +68,19 @@
             <li>WinAlert: the notification that pops up when the player has won</li>
             <li>Button: to reset gameplay when the user wants to restart halfway / or wins</li>
           </ul>
+          <img src="./images/slide-puzzle-1.png" alt="Diagram of React components breakdown">
 
           <h3>Structuring State</h3>
           <ul>
             <li>App component holds game progress ("progress" state) so it knows when to restart the game, or display winning alert. It has 3 allowed values - 0: start, 1: in progress, 2: won</li>
             <li>Grid component holds information about tiles placement ("tiles" state). This is stored as a 1-dimensional array. As Grid component has knowledge of all tiles, it contains validation and movement logic (e.g. canMove, moveTile)</li>
+            <div class="info-box">
+              <p>Why 1 dimensional array for "tiles" state?</p>
+              <ul>
+                <li>Easy to check for winning condition (i.e. check numbers in ascending order) as compared to 2-dimensional array</li>
+                <li>Slightly more space-efficient: the (x,y) position of the Tile can be derived from the index of the array using division and modulus operators</li>
+              </ul>
+            </div>
           </ul>
           <p>Tile component, Button component, WinAlert component do not own any state. They have event handlers attached, which changes the "progress" and "tiles" state based on user interaction.</p>
         </div>
@@ -81,8 +89,8 @@
           <h2>Problem Solving Highlights</h2>
           <h3>Check Winning Condition after Player Move</h3>
           <p>When the player clicks on a tile, I checked for the winning condition (checkIfPlayerWins) in the event handler after the tile was moved. However, the function was returning the correct result only after I had made an additional click after the winning move.</p>
-          <p>Upon investigation, the root cause was React had not updated the `tiles` state when the moveTile function called setTiles(newTiles). It would only be updated in the next render. Therefore, checkIfPlayerWins result was based on the old state of `tiles`, which would only give the correct result after the next render when I clicked again.</p>
-          <p>Solution: I shifted the checkIfPlayerWins into a useEffect hook, which executed after `tiles` state updated.</p>
+          <p>Upon investigation, the root cause was React had not updated the "tiles" state when the moveTile function called setTiles(newTiles). It would only be updated in the next render. Therefore, checkIfPlayerWins result was based on the old state of "tiles", which would only give the correct result after the next render when I clicked again.</p>
+          <p>Solution: I shifted the checkIfPlayerWins into a useEffect hook, which executed after "tiles" state updated.</p>
         </div>
 
         <div class="sub-section">
