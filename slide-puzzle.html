@@ -90,8 +90,11 @@
           <h2>Problem Solving Highlights</h2>
           <h3>Check Winning Condition after Player Move</h3>
           <p>When the player clicks on a tile, I checked for the winning condition (checkIfPlayerWins) in the event handler after the tile was moved. However, the function was returning the correct result only after I had made an additional click after the winning move.</p>
+          <script src="https://gist.github.com/joyfulcumulus/9eb31b0aebb74f962e8d6aeac860f6e1.js"></script>
+
           <p>Upon investigation, the root cause was React had not updated the "tiles" state when the moveTile function called setTiles(newTiles). It would only be updated in the next render. Therefore, checkIfPlayerWins result was based on the old state of "tiles", which would only give the correct result after the next render when I clicked again.</p>
           <p>Solution: I shifted the checkIfPlayerWins into a useEffect hook, which executed after "tiles" state updated.</p>
+          <script src="https://gist.github.com/joyfulcumulus/4eb77ec90c64215287c397d6e06ddb81.js"></script>
         </div>
 
         <div class="sub-section">
