@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yin Yun | Personal Website</title>
+    <meta name="description"
+          content="Personal Website of Yin Yun"
+          charset="utf-8"
+          >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1"
+          >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1><a href="index.html">Yin Yun</a></h1>
+        <ul class="list-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+
+        <div class="navbar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-major">
+        <h1>2048 Clone</h1>
+        <div class="byline">
+          <p>Role: Solo Developer</p>
+          <p>Year: May 2024</p>
+          <p>Skills: HTML, CSS, JavaScript</p>
+          <p>Source: <a href="https://github.com/joyfulcumulus/2048-clone" target="_blank">Github repository</a></p>
+        </div>
+
+        <div class="sub-section">
+          <h2>About the Project</h2>
+          <p>This is a clone of the popular 2048 puzzle game. I followed a <a href="https://www.youtube.com/watch?v=wOVEe9eawXc" target="_blank">tutorial</a> to learn how an experienced developer would approach this development using pure JavaScript.</p>
+          <p>Other than what was taught in the tutorial, I added touchscreen capability to play this game on a mobile device.</p>
+          <img src="./images/2048-1.gif" alt="Demo snippet of 2048 game">
+          <p>Click here for <a href="https://joyfulcumulus.github.io/2048-clone/" target="_blank">app demo</a>.</p>
+        </div>
+
+        <div class="sub-section">
+          <h2>My Role</h2>
+          <ul>
+            <li>Development and testing of application</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h2>Game Layout Design</h2>
+          <p>This is an overview of how the tutorial structured the design of the 2048 game:</p>
+
+          <p><strong>Gameboard: Grid and Cell classes</strong></p>
+          <ul>
+            <li>Grid: a 2-dimension Cartesian plane. Stores information about Cells</li>
+            <li>Cell: a specific (x,y) position on the grid. Stores information about what Tile is on the Cell, and whether there is another Tile to merge (i.e. mergeTile)</li>
+          </ul>
+
+          <p><strong>Player Resources: Tile class</strong></p>
+          <ul>
+            <li>Contains a value (a number that represents its magnitude)</li>
+            <li>Contains info about its position (x,y) on the gameboard</li>
+          </ul>
+          <img src="./images/2048-2.png" alt="Breakdown of game into classes">
+        </div>
+
+        <div class="sub-section">
+          <h2>Interesting Learning Points</h2>
+          <h3>Use of setter to change colour of tile when its value updates</h3>
+          <ul>
+            <li>When tile.value changes, the background and text lightness is adjusted based on the magnitude</li>
+            <li>This is how the larger the magnitude, the darker the color of the tile</li>
+          </ul>
+          <img src="./images/2048-3.PNG" alt="Tiles of different colours">
+          <script src="https://gist.github.com/joyfulcumulus/7df79708093bc5a5f63edb62ff9d9bfc.js"></script>
+
+          <h3>Use Async Function and Promises to allow CSS Transition to Complete</h3>
+          <p>Problem: Need to ensure that all tiles finish sliding, before a new move from the player can be accepted</p>
+          <p>Solution accomplished in the tutorial:</p>
+          <ul>
+            <li>Use async…await in event handler function</li>
+            <li>slideTiles function utilizes Promises.all() to ensure each tile's sliding animation finishes first</li>
+          </ul>
+          <script src="https://gist.github.com/joyfulcumulus/05b857bb69c8ae0a86a235092e7d1d4f.js"></script>
+        </div>
+
+        <div class="sub-section">
+          <h2>Problem Solving Highlights</h2>
+          <p>Here, I will discuss the portion of the project that was unguided by the tutorial: how I added touchscreen capability.</p>
+
+          <h3>Adding Touchscreen Capability</h3>
+          <ol>
+            <li>Initialize variables that log the (x,y) of the start and end positions of the touch interaction</li>
+            <li>Added "touchstart" and "touchend" event listeners, which are only invoked once per turn</li>
+            <li>Calculate swipeDistanceX and swipeDistanceY using data in Step 1 to determine interaction direction</li>
+            <li>To avoid moving tiles due to accidental touches, a swipeThreshold was introduced on the swipeDistance</li>
+          </ol>
+          <script src="https://gist.github.com/joyfulcumulus/719d04dd08f2e1d64c9ea082aa786a30.js"></script>
+        </div>
+
+        <div class="sub-section">
+          <h2>Project Achievement</h2>
+          <ul>
+            <li>Strengthened my knowledge of JavaScript classes, private methods, promises and CSS transitions.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="module" src="application.js"></script>
+  </body>
+</html>
+<!-- end of file -->
