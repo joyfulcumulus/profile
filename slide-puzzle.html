@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yin Yun | Personal Website</title>
+    <meta name="description"
+          content="Personal Website of Yin Yun"
+          charset="utf-8"
+          >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1"
+          >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1><a href="index.html">Yin Yun</a></h1>
+        <ul class="list-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+
+        <div class="navbar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-major">
+        <h1>Slide Puzzle Clone</h1>
+        <div class="byline">
+          <p>Role: Solo Developer</p>
+          <p>Year: May 2024</p>
+          <p>Skills: React JS</p>
+          <p>Source: <a href="https://github.com/joyfulcumulus/react-slide-puzzle" target="_blank">Github repository</a></p>
+        </div>
+
+        <div class="sub-section">
+          <h2>About the Project</h2>
+          <p>This is a clone of the common Slide Puzzle game after I started learning React for 1 week.</p>
+          <p>Click here for <a href="https://joyfulcumulus.github.io/react-slide-puzzle/ " target="_blank">app demo</a>.</p>
+        </div>
+
+        <div class="sub-section">
+          <h2>My Role</h2>
+          <ul>
+            <li>Development and testing of application</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h2>Game Layout Design</h2>
+          <p>I applied my learnings from 2048 Clone project to have similar Grid and Tile React components. The WinAlert and Button are additional components improving the user experience.</p>
+
+          <h3>React Components</h3>
+          <ul>
+            <li>Grid: gameboard of the game</li>
+            <li>Tile: the clickable / moveable elements of the game</li>
+            <li>WinAlert: the notification that pops up when the player has won</li>
+            <li>Button: to reset gameplay when the user wants to restart halfway / or wins</li>
+          </ul>
+
+          <h3>Structuring State</h3>
+          <ul>
+            <li>App component holds game progress ("progress" state) so it knows when to restart the game, or display winning alert. It has 3 allowed values - 0: start, 1: in progress, 2: won</li>
+            <li>Grid component holds information about tiles placement ("tiles" state). This is stored as a 1-dimensional array. As Grid component has knowledge of all tiles, it contains validation and movement logic (e.g. canMove, moveTile)</li>
+          </ul>
+          <p>Tile component, Button component, WinAlert component do not own any state. They have event handlers attached, which changes the "progress" and "tiles" state based on user interaction.</p>
+        </div>
+
+        <div class="sub-section">
+          <h2>Problem Solving Highlights</h2>
+          <h3>Check Winning Condition after Player Move</h3>
+          <p>When the player clicks on a tile, I checked for the winning condition (checkIfPlayerWins) in the event handler after the tile was moved. However, the function was returning the correct result only after I had made an additional click after the winning move.</p>
+          <p>Upon investigation, the root cause was React had not updated the `tiles` state when the moveTile function called setTiles(newTiles). It would only be updated in the next render. Therefore, checkIfPlayerWins result was based on the old state of `tiles`, which would only give the correct result after the next render when I clicked again.</p>
+          <p>Solution: I shifted the checkIfPlayerWins into a useEffect hook, which executed after `tiles` state updated.</p>
+        </div>
+
+        <div class="sub-section">
+          <h2>Project Achievement</h2>
+          <ul>
+            <li>Managed to create a working application after briefly learning about React components, State hook and Effect hook. </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="module" src="application.js"></script>
+  </body>
+</html>
+<!-- end of file -->
