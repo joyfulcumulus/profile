@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yin Yun | Personal Website</title>
+    <meta name="description"
+          content="Personal Website of Yin Yun"
+          charset="utf-8"
+          >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1"
+          >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1><a href="index.html">Yin Yun</a></h1>
+        <ul class="list-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+
+        <div class="navbar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-major">
+        <h1>120 Years of Olympics</h1>
+        <div class="byline">
+          <p>Role: Data Analyst</p>
+          <p>Year: Aug 2024</p>
+          <p>Skills: Python, Pandas, Seaborn, Matplotlib</p>
+          <p>Source: <a href="https://github.com/joyfulcumulus/python-olympics" target="_blank">Github repository</a></p>
+        </div>
+
+        <div class="sub-section">
+          <h2>About the Project</h2>
+          <p>Since the 2024 Olympics in Paris is just over, I thought it would be interesting to do an exploratory data analysis on Olympics data.</p>
+          <p>This analysis would also enable me to be proficient in using Python libraries - Pandas, Seaborn, Matplotlib</p>
+        </div>
+
+        <div class="sub-section">
+          <h2>Dataset Used</h2>
+          <ul>
+            <li>I obtained an Olympics Dataset from <a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results" target="_blank">Kaggle</a></li>
+            <li>Each row in this dataset is an athlete-event, which describes who competed in which game(s), in which event, and the result (medal).</li>
+            <li>Each row also contains details about the athlete's physical data (i.e. sex, height, weight, age)</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h2>Business Problem Identification</h2>
+          <p>As an exploratory data analysis, there is no business problem. Instead, I thought of common questions that people may ask about the Olympic games:</p>
+          <ol>
+            <li>Who (at country level) participates in the Olympics?</li>
+            <li>The ancient Olympic games only started with male participation. Since then, has female representation increased?</li>
+            <li>Who (at country level) dominates the Olympics?</li>
+            <li>Since these athletes have trained very hard, they must be very fit. Does it follow that they also have a healthy BMI?</li>
+          </ol>
+        </div>
+
+        <div class="sub-section">
+          <h2>Data Extraction</h2>
+          <p>I used a Jupyter notebook hosted on Kaggle, which makes connecting to the dataset easy</p>
+        </div>
+
+        <div class="sub-section">
+          <h2>Data Cleaning / Checks</h2>
+          <p>To ensure the data was fit for analysis, I first checked the quality of the data</p>
+          <ul>
+            <li>Size of data set (using shape)</li>
+            <li>Data types of each column so I would manipulate them using the appropriate functions (using dtypes)</li>
+            <li>Missing values, unrealistic outliers (e.g. min/max) (using describe)</li>
+            <li>Relationship between the columns, if any (e.g Sports and Events are 1:N)</li>
+          </ul>
+          <p>Insights</p>
+          <ul>
+            <li>Event and Team column data was not very useful</li>
+            <li>There are indeed some elderly athletes taking part in relatively more "sedentary" events (e.g. Art Competitions)</li>
+            <li>The Winter Olympics data needed recoding of the Year from 1992 onwards due to it being held in different years</li>
+            <li>Age, Height, Weight and Medal fields had incomplete data. It was best to use data from 1960 onwards for analyses related to athlete's physique</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h2>Main Takeaways</h2>
+          <p>Female participation in the Olympics increased gradually in the 1940s, then rapidly in the 1980s</p>
+          <p>Attendance rose over time, from 12 countries in the first Olympics, to 207 in the 2016 Olympics. The only exception where attendance dipped in 1976 and 1980 was due to boycotts.</p>
+          <p>Some countries participate in both summer and winter strongly (e.g. USA), but others may have less representation in winter sports (e.g. Australia), and vice versa (e.g. Norway more representation in winter), possibly due to the climate in their countries</p>
+          <p>Countries that dominates the Olympics are USA, Russia, Germany</p>
+          <p>Athletes competing in sports that require more strength / muscle mass (e.g. judo, rugby, curling, weighlifting and wrestling) usually had athletes with BMI above the normal range</p>
+        </div>
+
+        <div class="sub-section">
+          <h2>Key Learnings</h2>
+          <ul>
+            <li>Important to do the data cleaning / checks first, so that I understood what preparation was required for each business question. For example, when analysing anything related to height, weight, age, I would only take data from 1960 onwards due to incompleteness issue.</li>
+            <li>Always try to investigate abnormal trends. I realised that it was from there where I learnt more historical knowledge about the Olympics, such as how the winter and summer olympics were split from the same year from 1992 onwards, and the boycotts that took place etc. The historical knowledge then guided my data cleaning. For example, in the case of the splitting of the winter and summer olympics, I had to add additional logic to recode the Year value in the winter olympics</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="module" src="application.js"></script>
+  </body>
+</html>
+<!-- end of file -->
