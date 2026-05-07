@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yin Yun | Personal Website</title>
+    <meta name="description"
+          content="Personal Website of Yin Yun"
+          charset="utf-8"
+          >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1"
+          >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1><a href="index.html">Yin Yun</a></h1>
+        <ul class="list-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+
+        <div class="navbar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-major">
+        <h1>Job Recommendation System in Job Street</h1>
+        <div class="byline">
+          <p>Role: Team member</p>
+          <p>Year: Nov 2025</p>
+          <p>Topics: Information Retrieval, Natural Language Processing, Recommendation, Search Ranking & Relevance</p>
+          <p>Source: <a href="https://github.com/joyfulcumulus/text-analytics-jobsearch" target="_blank">Github repository</a></p>
+        </div>
+
+        <div class="sub-section">
+          <h2>About the Project</h2>
+          <p>This is a group project for ISSS609 Text Analytics course.</p>
+          <p>The objective of the project is to leverage text analytics techniques to recommend relevant job postings to job seekers and provide insights on in-demand skills for major job categories. This recommendation pipeline consists of 3 major modules:</p>
+          <ul>
+            <li>Document Classification: Supervised ML model to automatically categorize postings into standardized taxonomy (i.e. major job categories)</li>
+            <li>Topic Modelling: Identify key and emerging skills relevant to each job cluster</li>
+            <li>Document Retrieval: Semantic matching to connect job seekers to desired positions</li>
+          </ul>
+          <img src="./images/jobrec-1.PNG" alt="Overview of Machine Learning Pipeline">
+        </div>
+
+        <div class="sub-section">
+          <h2>My Role</h2>
+          <ul>
+            <li>Worked on the Document Retrieval module with another classmate</li>
+            <li>Generated word embeddings using TF-IDF and Word2Vec for experimentation on performance</li>
+            <li>Designed and built text preprocessing, retrieval and ranking pipeline</li>
+            <li>Built hard and soft filters</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h2>Final Product</h2>
+          <ul>
+            <li>Front End interactive user interface where user can type in query</li>
+            <li>Filter results by categorical filters, or company name (if mentioned in query)</li>
+            <li>Display in-demand skills related to the industry of the job posting result</li>
+            <li>Built using ipywidgets</li>
+          </ul>
+          <img src="./images/jobrec-2.PNG" alt="Final User Interface">
+        </div>
+      </div>
+
+    </div>
+
+    <script type="module" src="application.js"></script>
+  </body>
+</html>
+<!-- end of file -->

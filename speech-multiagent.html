@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yin Yun | Personal Website</title>
+    <meta name="description"
+          content="Personal Website of Yin Yun"
+          charset="utf-8"
+          >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1"
+          >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1><a href="index.html">Yin Yun</a></h1>
+        <ul class="list-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+
+        <div class="navbar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-major">
+        <h1>Speech Generation Multi-Agent System</h1>
+        <div class="byline">
+          <p>Role: Team member</p>
+          <p>Year: Mar 2026</p>
+          <p>Topics: Generative AI, Multi-Agent Systems, LangGraph, Large Language Models (LLMs), Prompt Engineering</p>
+          <p>Source: <a href="https://github.com/BrannonOh/CS614_GroupProject" target="_blank">Github repository</a></p>
+        </div>
+
+        <div class="sub-section">
+          <h2>About the Project</h2>
+          <p>This is a group project for CS614 Generative AI with LLMs course.</p>
+          <p>In this project, we built a multi-agentic system which helps a user turn a speech outline into a professional script based on TED-talk best practices, while personalised to the user's style. Features of our system:</p>
+          <ul>
+            <li>Verification of factual claims, with Human in the Loop (HITL) for correction</li>
+            <li>Speech content enrichment using Tavily Search with strong evidence</li>
+            <li>Maker-checker loops in architecture to improve quality of output at each stage</li>
+            <li>Schema validation of agentic output using Pydantic to ensure clean inputs to next stage</li>
+            <li>Final LLM-as-judge evaluation for improved coherence and quality</li>
+            <li>Containerised in Docker for scalable and reliable deployment</li>
+          </ul>
+          <p>Multi-agentic system flow:</p>
+          <p>A. Content verification and structural improvements. This is done using Tavily to conduct web search and verify facts, Tavily to retrieve stronger and more relevant facts, prompt engineering to apply TED Talk structure to create a more engaging speech:</p>
+          <img src="./images/speech-ma-1.PNG" alt="Key features of multi-agentic system 1">
+          <p>B. User's style incorporation. This is done by analysing samples of past speeches made by the user to arrive at a style profile, which is then applied to the content outline:</p>
+          <img src="./images/speech-ma-2.PNG" alt="Key features of multi-agentic system 2">
+        </div>
+
+        <div class="sub-section">
+          <h2>My Role</h2>
+          <ul>
+            <li>Set up the Docker environment and determined the repository structure for efficient collaboration</li>
+            <li>Developed agents of Part B of the flow, which includes: style extraction, style aggregation, script writing, and reflection agents</li>
+            <li>Designed and built the evaluation pipeline (manual) for the above style portion</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h2>Final Product</h2>
+          <p>Interactive UI where user can input a speech outline, describe the context, and the system will output the text speech.</p>
+          <p>Example user input:</p>
+          <img src="./images/speech-ma-3.PNG" alt="Screenshot of speech generation 1">
+          <p>Example output:</p>
+          <img src="./images/speech-ma-4.PNG" alt="Screenshot of speech generation 2">
+        </div>
+      </div>
+
+    </div>
+
+    <script type="module" src="application.js"></script>
+  </body>
+</html>
+<!-- end of file -->

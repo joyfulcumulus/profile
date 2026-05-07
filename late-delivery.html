@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yin Yun | Personal Website</title>
+    <meta name="description"
+          content="Personal Website of Yin Yun"
+          charset="utf-8"
+          >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1"
+          >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1><a href="index.html">Yin Yun</a></h1>
+        <ul class="list-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+
+        <div class="navbar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-major">
+        <h1>Late Delivery Prediction for Ecommerce Orders</h1>
+        <div class="byline">
+          <p>Role: Team member</p>
+          <p>Year: Jun 2025</p>
+          <p>Topics: Machine Learning Engineering, Medallion Architecture & Data Modeling, Model Monitoring, Data Pipeline Orchestration</p>
+          <p>Source: <a href="https://github.com/joyfulcumulus/MLE_grp10" target="_blank">Github repository</a></p>
+        </div>
+
+        <div class="sub-section">
+          <h2>About the Project</h2>
+          <p>This is a group project for CS611 Machine Learning Engineering course.</p>
+          <p>In this project, we built a Machine Learning Pipeline which:</p>
+          <ul>
+            <li>processes raw data from Olist into a datamart following medallion architecture (bronze, silver, gold)</li>
+            <li>makes daily inference to predict late orders and stores the predictions into the datamart</li>
+            <li>computes monitoring metrics and stores the metrics into the datamart</li>
+            <li>displays the monitoring metrics into a dashboard (Jupyter notebook)</li>
+          </ul>
+          <p>The above processes are orchestrated using Airflow and containerised in Docker.</p>
+          <p>Model training is performed manually, and we create 2 models (XGBoost and Logistic Regression).</p>
+          <img src="./images/latedelivery-1.PNG" alt="Overview of Late Delivery ML Pipeline">
+        </div>
+
+        <div class="sub-section">
+          <h2>My Role</h2>
+          <ul>
+            <li>Led the design of the data schema, determining field name, data type, data processing logics needed</li>
+            <li>Built the data pipeline in a sub-team of 3</li>
+            <li>Led the building of the Airflow DAG</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h2>Final Product</h2>
+          <ul>
+            <li>Airflow DAG that runs daily at 9am to identify high risk deliveries before operations begin. Gives delivery team early warning to reroute and notify customers about expected delays.</li>
+            <li>Monitoring tasks are sequential, mimicking real-life situation where data source is prepared first, followed by model inference and evaluation.</li>
+            <li>If job failed from previous day, Airflow DAG will not continue, thus alerting engineers and biz team of the issue.</li>
+          </ul>
+          <p>Screenshot of our DAG run:</p>
+          <img src="./images/latedelivery-2.PNG" alt="Screenshot of successful Airflow DAG run">
+        </div>
+      </div>
+
+    </div>
+
+    <script type="module" src="application.js"></script>
+  </body>
+</html>
+<!-- end of file -->
